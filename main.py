@@ -33,6 +33,7 @@ class SqlDatabase:
         with self._conn:
             self._cursor.execute(f"INSERT INTO {table_name} VALUES ({entry_values})")
 
+            
 def generate_first_name() -> str:
     return names.get_first_name()
 
@@ -69,6 +70,7 @@ def get_phone_number() -> int:
 
 def get_gender() -> str:
     return choice(['Male', 'Female'])
+
 
 class MainDatabase(SqlDatabase):
     def __init__(self) -> None:
